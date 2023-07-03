@@ -1,0 +1,155 @@
+
+<!--WEBSITE HERE: https://web222who-am-i.netlify.app/-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/dd1873a162.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Who Am I?</title>
+    <!--css files-->
+    <link rel="stylesheet" href="./css/customization.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a76c904191.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id = header>
+      <!-- nav -->
+      <div id="nav_bar">
+        <nav>
+          <a href="#header">Home</a>
+          <a href="#education">Education</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact_me">Contact Me</a>
+        </nav>
+      </div>
+      
+      <div id="pic_container">
+        <!-- name,titles,skills -->
+        <div id="name_title">
+          <h1>Justin Alaan-Nguyen</h1>
+          <p id="titles">Web Developer, Software Engineer</p>
+          <div id="skills"></div>
+        </div>
+        <!-- pic and button -->
+        <div id="pic_resume">
+        <div id="profile_pic"></div>
+          <a
+          id="resume_button"
+          href="pics/Justin Alaan-Nguyen's Resume.pdf"
+          download>
+            <i class="fa-solid fa-download"></i>&nbspResume
+        </a>
+        </div>
+      </div>
+      
+
+    </div>
+    <main>
+      <!-- school -->
+      <div id="education">
+        <div id="school_pics"></div>
+        <div id="school"></div>
+      </div>
+
+      <!-- projects -->
+      <div id="projects">
+        <div class="project_container">
+          <h1 class="project_title">My Projects</h1>
+          <div class="project_list">
+            <div class="project_item">
+             <img src="pics/Work_In_Progress.jpeg">
+             <div class="project_desc">
+              <h3>Dentist Patient Logger</h3>
+              <p>A useful website that could be utilized by students or verified workers in the dental field</p>
+              <a href=""><i class="fa-solid fa-link"></i></a>
+             </div>
+            </div>
+            <div class="project_item">
+              <img src="pics/Work_In_Progress.jpeg">
+              <div class="project_desc">
+                <h3>Mock facebook</h3>
+                <p>work in progress</p>
+                <a href=""><i class="fa-solid fa-link"></i></a>
+               </div>
+            </div>
+            <div class="project_item">
+              <img src="pics/Work_In_Progress.jpeg">
+              <div class="project_desc">
+                <h3>Build your own card</h3>
+                <p>work in progress</p>
+                <a href=""><i class="fa-solid fa-link"></i></a>
+               </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+
+      <!--contact me-->
+      <div id="contact_me">
+       <div class="contact_container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-regular fa-paper-plane"></i>contact@example.com</p>
+            <p><i class="fa-sharp fa-solid fa-phone"></i>123456789</p>
+            <div class="social-icons">
+              <a href="linkedin.com/in/justin-alaan-2b38a6212"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="mailto:justinalaan2@gmail.com?subject = Contact&body = Write me a message!"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <a
+            id="resume_button2"
+            href="pics/Justin Alaan-Nguyen's Resume.pdf"
+            download>
+              <i class="fa-solid fa-download"></i>&nbspResume
+          </a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <span id="submit_confirm"></span>
+          </div>
+        </div>
+       </div>
+      </div>
+    </main>
+
+    <!--js files-->
+    <script src="./js/script.js"></script>
+    <script src="./js/education.js"></script>
+    <script src="./js/skills.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwJSujnSWBtfz7YNyrrkYnOTqWBziEYV2FslsQ_14XvSs2G6pHG4d6KUgPptZxxatMT1Q/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("submit_confirm")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {msg.innerHTML = "Message sent successfully!"
+          setTimeout(function(){
+            msg.innerHTML = ""
+          }, 5000)
+          form.reset()
+        })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+  </body>
+</html>
