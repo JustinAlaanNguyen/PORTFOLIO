@@ -81,8 +81,7 @@ body {
 
 /*header pic_resume*/
 #profile_img {
-  max-width: 30vw;
-  padding-bottom: 1vh
+  max-width: 25vw;
   border-radius: 1vw;
 }
 #resume_button {
