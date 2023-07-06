@@ -9,6 +9,10 @@ body {
   font-family: Montserrat;
 }
 /*nav_bar*/
+#header #nav_bar{
+  background-color: #395144;
+}
+
 #header #nav_bar nav a{
   margin: 1vw 1vw;
   color: #F0EBCE;
@@ -40,7 +44,7 @@ body {
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .body {
-  padding-top: 3vh;
+  padding-top: 9vh;
 }
 
 
