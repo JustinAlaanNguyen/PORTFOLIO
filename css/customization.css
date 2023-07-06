@@ -82,6 +82,7 @@ body {
 /*header pic_resume*/
 #profile_img {
   max-width: 30vw;
+  padding-bottom: 1vh
   border-radius: 1vw;
 }
 #resume_button {
@@ -228,7 +229,7 @@ body {
 
 }
 .contact-left p{
-  font-size: 1vw;
+  font-size: 1.5vw;
   margin-top: 1vh;
 }
 
